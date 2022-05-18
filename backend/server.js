@@ -71,6 +71,6 @@ app.post('/signin', async (req, res) => {
   }
 })
 
-app.listen(3005, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Server is running at post 3005 ')
 })
