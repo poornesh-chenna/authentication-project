@@ -3,9 +3,10 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
-dbConnect()
+await dbConnect()
 async function dbConnect() {
-  const dbUrl = 'mongodb://localhost:27017/signUpDB'
+  const dbUrl =
+    'mongodb+srv://poornesh:poornesh@cluster0.hdkwk.mongodb.net/?retryWrites=true&w=majority'
   await mongoose
     .connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(
@@ -71,6 +72,6 @@ app.post('/signin', async (req, res) => {
   }
 })
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3005, () => {
   console.log('Server is running at post 3005 ')
 })
