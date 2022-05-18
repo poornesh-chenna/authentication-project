@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
-await dbConnect()
+dbConnect()
 async function dbConnect() {
   const dbUrl =
     'mongodb+srv://poornesh:poornesh@cluster0.hdkwk.mongodb.net/?retryWrites=true&w=majority'
@@ -15,6 +15,8 @@ async function dbConnect() {
       },
       (err) => console.log(err)
     )
+
+  console.log('Mongodb connected......')
 }
 
 const app = express()
